@@ -1,8 +1,10 @@
 <template>
-    <div id="bio" class="hel-out" v-html="formatBio"></div>
+    <div id="bio" class="hel-out" v-html="content"></div>
 </template>
 
 <script>
+import Vue from 'vue'
+
 export default {
     data() {
         return {
@@ -10,13 +12,13 @@ export default {
         }
     },
     computed: {
-        formatBio() {
-            let stringArray = this.bio.split('')
-            stringArray.forEach((character, index) => {
-                if (character.toLowerCase() === 's' || character.toLowerCase() === 'p')
-                    stringArray[index] = `<span class="yolda">${character}</span>`
-            });
-            return stringArray.join('')
+        content() {
+            try {
+                let content = this.bio
+                return Vue.filter('formatFont')(content);
+            } catch {
+                return null
+            }
         }
     },
 }

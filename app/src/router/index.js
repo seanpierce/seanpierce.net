@@ -22,6 +22,12 @@ Vue.use(VueRouter)
     props: true
   },
   {
+    path: '/contact',
+    name: 'Contact',
+    component: () => import('@/views/Contact.vue'),
+    props: true
+  },
+  {
     path: '*',
     name: 404,
     component: () => import('@/views/404.vue')

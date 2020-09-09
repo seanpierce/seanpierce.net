@@ -13,7 +13,7 @@ export default {
     Nav
   },
   created() {
-    this.$store.dispatch('getWorks')
+    this.$store.dispatch('initialize')
   }
 }
 </script>

@@ -26,7 +26,7 @@ export default {
     },
     computed: {
         works() {
-            return this.$store.state.works
+            return this.$store.state.works.works
         }
     }
 }

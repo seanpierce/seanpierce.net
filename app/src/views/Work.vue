@@ -1,6 +1,6 @@
 <template>
     <div id="work">
-        <h1 v-html="formatContent(work.title)"></h1>
+        <h1 v-html="title"></h1>
         <div id="content"
             v-html="work.content">
         </div>
@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import Vue from 'vue'
+
 export default {
     data() {
         return {
@@ -23,17 +25,15 @@ export default {
     props: {
         slug: String
     },
-    methods: {
-        formatContent(input) {
-            let stringArray = input.split('')
-            stringArray.forEach((character, index) => {
-                if (character.toLowerCase() === 's' || character.toLowerCase() === 'p')
-                    stringArray[index] = `<span class="yolda">${character}</span>`
-            });
-            return stringArray.join('')
-        }
-    },
     computed: {
+        title() {
+            try {
+                let content = this.work.title
+                return Vue.filter('formatFont')(content);
+            } catch {
+                return null
+            }
+        },
         work() {
             return this.$store.getters.getWorkBySlug(this.slug)
         },

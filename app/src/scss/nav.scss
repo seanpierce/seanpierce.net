@@ -1,0 +1,54 @@
+#nav {
+
+    img#sean {
+        position: fixed;
+        top: 4rem;
+        right: 4rem;
+        height: 24rem; 
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    #nav-modal {
+        background: yellow;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        transform: translateY(-100%);
+        transition: all 0.25s;
+
+        &.showNav {
+            transform: translateY(0);
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding: 6em 0 0 0;
+        width: 90%;
+        max-width: 400px;
+        margin: auto;
+        text-align: center;
+
+        li {
+            display: inline-block;
+            width: 100%;
+            margin: 0.5rem auto;
+            font-size: 2rem;
+            text-align: center;
+            transform: skew(15deg);
+
+            a {
+                color: black;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

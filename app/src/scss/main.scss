@@ -1,0 +1,27 @@
+@import './fonts.scss';
+
+body, html {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+
+#bio {
+    color: red;
+    font-size: 16rem;
+    word-wrap: break-word;
+}
+
+#not-found {
+    color: red;
+    font-size: 10rem;
+}
+
+.hel-out {
+    font-family: 'HelveticaOutline', Helvetica, sans-serif;
+}
+
+.yolda {
+    font-family: 'Yolda', Helvetica, sans-serif;
+}

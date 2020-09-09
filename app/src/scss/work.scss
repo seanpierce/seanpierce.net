@@ -1,0 +1,19 @@
+#work {
+
+    font-size: 2rem;
+    color: red;
+
+    ul {
+        margin-bottom: 1rem;
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            &::before {
+                content: '✓';
+                padding-right: 1rem;
+            }
+        }
+
+    }
+}

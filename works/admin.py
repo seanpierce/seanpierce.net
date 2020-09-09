@@ -2,10 +2,6 @@ from django.contrib import admin
 from .models import Work, WorkImage
 
 
-class WorkImageAdmin(admin.ModelAdmin):
-    pass
-
-
 class WorkImageInline(admin.StackedInline):
     model = WorkImage
     max_num=10
@@ -20,4 +16,3 @@ class WorkAdmin(admin.ModelAdmin):
     inlines = [WorkImageInline]
 
 admin.site.register(Work, WorkAdmin)
-admin.site.register(WorkImage, WorkImageAdmin)

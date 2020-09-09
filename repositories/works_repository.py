@@ -1,5 +1,3 @@
-from django.core.exceptions import ObjectDoesNotExist
-
 from works.models import Work
 from .query_helpers import QueryHelpers as Query
 

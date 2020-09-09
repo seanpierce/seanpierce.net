@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'api',
     'repositories',
     'works',
+    'pages',
 ]
 
 MIDDLEWARE = [

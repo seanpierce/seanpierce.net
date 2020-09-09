@@ -18,3 +18,8 @@ class Work(models.Model):
     def save(self, *args, **kwargs):
         self.slug = ''.join(char for char in self.title if char.isalnum())
         super(Work , self).save()
+
+
+class WorkImage(models.Model):
+    image = models.ImageField(upload_to='works/')
+    work = models.ForeignKey(Work, on_delete=models.CASCADE)

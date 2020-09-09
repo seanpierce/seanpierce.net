@@ -4,12 +4,22 @@
         <div id="content"
             v-html="work.content">
         </div>
+        <div id="images" v-if="images">
+            <img v-for="(image, index) in images" 
+                :key="index" 
+                :src="mediaUrl + image">
+        </div>
         <router-link to="/works" class="back">&lt;</router-link>
     </div>
 </template>
 
 <script>
 export default {
+    data() {
+        return {
+            mediaUrl: process.env.VUE_APP_MEDIA_URL
+        }
+    },
     props: {
         slug: String
     },
@@ -26,6 +36,13 @@ export default {
     computed: {
         work() {
             return this.$store.getters.getWorkBySlug(this.slug)
+        },
+        images() {
+            try {
+                return this.work?.images.split(',')
+            } catch {
+                return null
+            }
         }
     }
 }

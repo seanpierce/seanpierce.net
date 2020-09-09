@@ -1,12 +1,13 @@
 <template>
     <div id="works">
         <ul>
-            <router-link tag="li" 
-                v-for="work in works" 
-                :key="work.id" 
-                v-html="formatContent(work.title)"
-                :to="'/works/' + work.slug">
-            </router-link>
+            <li v-for="work in works" 
+                :key="work.id">
+                <router-link
+                    v-html="formatContent(work.title)"
+                    :to="'/works/' + work.slug">
+                </router-link>
+            </li>
         </ul>
     </div>
 </template>

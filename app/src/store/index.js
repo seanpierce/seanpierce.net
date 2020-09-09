@@ -19,6 +19,9 @@ export default new Vuex.Store({
       commit('SET_WORKS', response.data)
     }
   },
-  modules: {
+  getters: {
+    getWorkBySlug: (state) => (slug) => {
+      return state.works.find(x => x.slug.toLowerCase() === slug.toLowerCase())
+    }
   }
 })

@@ -7,7 +7,7 @@
                     <router-link to="/">Bio</router-link>
                 </li>
                 <li>
-                    <router-link to="/work">Work</router-link>
+                    <router-link to="/works">Works</router-link>
                 </li>
                 <li>
                     <router-link to="/contact">Contact</router-link>

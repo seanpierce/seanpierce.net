@@ -11,9 +11,15 @@ Vue.use(VueRouter)
     component: Home
   },
   {
-    path: '/work',
+    path: '/works',
+    name: 'Works',
+    component: () => import('@/views/Works.vue')
+  },
+  {
+    path: '/works/:work',
     name: 'Work',
-    component: () => import('@/views/Work.vue')
+    component: () => import('@/views/Work.vue'),
+    props: true
   },
   {
     path: '*',

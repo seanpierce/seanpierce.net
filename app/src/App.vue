@@ -11,6 +11,9 @@ import Nav from '@/components/Nav'
 export default {
   components: {
     Nav
+  },
+  created() {
+    this.$store.dispatch('getWorks')
   }
 }
 </script>

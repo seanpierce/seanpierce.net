@@ -15,7 +15,10 @@ class WorksRepository:
         """
 
         sql = """
-            select w.*, strftime(w.created_at) as created_at
+            select 
+                w.*, 
+                strftime(w.created_at) as created_at, 
+                replace(w.title, ' ', '-') as slug
             from works_work w
             order by created_at desc
         """

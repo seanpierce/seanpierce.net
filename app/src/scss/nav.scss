@@ -7,6 +7,12 @@
         height: 24rem; 
         cursor: pointer;
         z-index: 10;
+
+        @media (max-width: 750px) {
+            height: 12rem; 
+            top: 1rem;
+            right: 1rem;
+        }
     }
 
     #nav-modal {

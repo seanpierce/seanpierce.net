@@ -12,6 +12,10 @@ body, html {
 #bio {
     font-size: 16rem;
     word-wrap: break-word;
+
+    @media (max-width: 750px) {
+        font-size: 12rem;
+    }
 }
 
 #not-found {

@@ -11,7 +11,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 import os
+import configparser
 from pathlib import Path
+
+# Environment configuration
+CONFIG = configparser.RawConfigParser()
+CONFIG.read('./env.ini')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -24,13 +29,11 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'mqfdr_9kv49--q=$zte*4vxlh53&97clcknulnl^7(sn=d1oek'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = eval(CONFIG.get('Environment', 'DEBUG'))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = CONFIG.get('Environment', 'ALLOWED_HOSTS').split(',')
 
-CORS_ORIGIN_WHITELIST = [
-    "http://localhost:8080",
-]
+CORS_ORIGIN_WHITELIST = CONFIG.get('Environment', 'CORS_ORIGIN_WHITELIST').split(',')
 
 
 # Application definition

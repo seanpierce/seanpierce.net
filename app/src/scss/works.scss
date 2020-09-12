@@ -32,12 +32,22 @@
 
     #content {
         font-size: 4rem;
+
+        a {
+            color: inherit;
+            font-family: 'HelveticaOutline', Helvetica, sans-serif;
+        }
     }
 
     .back {
         font-size: 8rem;
         color: inherit;
         text-decoration: none;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     #images {

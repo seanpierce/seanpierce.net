@@ -1,5 +1,5 @@
 <template>
-    <div id="work">
+    <div id="work" v-if="work">
         <h1 v-html="title"></h1>
         <div id="content"
             v-html="work.content">

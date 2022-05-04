@@ -4,7 +4,7 @@
         <div id="nav-modal" v-bind:class="{ showNav: showNav }">
             <ul class="hel-out">
                 <li>
-                    <router-link to="/">Bio</router-link>
+                    <router-link @click="test()" to="/">Bio</router-link>
                 </li>
                 <li>
                     <router-link to="/works">Works</router-link>

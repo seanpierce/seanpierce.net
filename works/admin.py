@@ -10,7 +10,6 @@ class WorkImageInline(admin.StackedInline):
 
 class WorkAdmin(admin.ModelAdmin):
     list_per_page = 10
-    readonly_fields=['slug']
     search_fields = ['title', 'content']
     list_filter = ['created_at']
     inlines = [WorkImageInline]

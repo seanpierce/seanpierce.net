@@ -7,21 +7,16 @@ class Work(models.Model):
     id = models.AutoField(primary_key=True)
     created_at = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=250)
-    slug = models.CharField(max_length=250, blank=True)
     content = RichTextField()
     year = models.IntegerField(default="")
     present = models.BooleanField(default=False)
+    featured = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
 
     class Meta:
         ordering = ['-created_at',]
-
-    def save(self, *args, **kwargs):
-        self.slug = ''.join(char for char in self.title if char.isalnum())
-        super(Work , self).save()
-
 
 class WorkImage(models.Model):
     image = models.ImageField(upload_to='works/')

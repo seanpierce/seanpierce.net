@@ -19,6 +19,7 @@ class WorksRepository:
                 (select group_concat(image) from works_workimage where work_id = w.id) as images
             from works_work w
             order by 
+            featured desc,
             present desc,
             year desc
         """

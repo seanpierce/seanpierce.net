@@ -31,12 +31,13 @@
     }
 
     #content {
-        font-size: 4rem;
+        font-size: 3rem;
 
         a {
             color: inherit;
             font-family: 'HelveticaOutline', Helvetica, sans-serif;
             text-decoration: none;
+            word-wrap: break-word;
 
             &:hover {
                 text-decoration: underline;

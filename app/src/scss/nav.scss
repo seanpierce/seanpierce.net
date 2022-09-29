@@ -49,4 +49,18 @@
             left: 3rem;
         }
     }
+
+    img#bio-background {
+        position: fixed;
+        z-index: -1;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        opacity: 20%;
+
+        @media (max-width: $breakpoint) {
+            width: 100%;
+        }
+    }
 }

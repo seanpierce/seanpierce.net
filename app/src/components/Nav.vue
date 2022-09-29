@@ -1,6 +1,7 @@
 <template>
     <div id="nav">
         <img id="sean" :src="require('@/assets/images/big-sean.png')" @click="toggleNav()">
+
         <div id="nav-container">
             <img id="speech" :src="require('@/assets/images/seanpierce-net-speech-bubble.png')">
             <img id="nav-bio" 
@@ -16,6 +17,8 @@
                 :src="require('@/assets/images/seanpierce-net-link-contact.png')"
                 @click="goTo('contact')">
         </div>
+
+        <img id="bio-background" :src="require('@/assets/images/seanpierce-net-bio.png')">
     </div>
 </template>
 

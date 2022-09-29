@@ -1,3 +1,4 @@
+from statistics import mode
 from django.db import models
 
 from ckeditor.fields import RichTextField
@@ -8,6 +9,8 @@ class Work(models.Model):
     title = models.CharField(max_length=250)
     slug = models.CharField(max_length=250, blank=True)
     content = RichTextField()
+    year = models.IntegerField()
+    present = models.BooleanField()
 
     def __str__(self):
         return self.title

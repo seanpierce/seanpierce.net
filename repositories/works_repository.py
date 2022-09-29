@@ -18,6 +18,8 @@ class WorksRepository:
                 strftime(w.created_at) as created_at,
                 (select group_concat(image) from works_workimage where work_id = w.id) as images
             from works_work w
-            order by created_at desc
+            order by 
+            present desc,
+            year desc
         """
         return Query.all(sql)

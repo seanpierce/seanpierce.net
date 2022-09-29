@@ -2,6 +2,7 @@
 
 $color1: #5476AB;
 $color2: #AB8954;
+$breakpoint: 750px;
 
 html {
     background-color: rgba($color2, 0.05);
@@ -26,7 +27,7 @@ body, html {
     word-wrap: break-word;
     text-transform: uppercase;
 
-    @media (max-width: 750px) {
+    @media (max-width: $breakpoint) {
         font-size: 4rem;
     }
 }

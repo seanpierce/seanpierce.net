@@ -10,11 +10,13 @@
 
     .work-image {
         display: inline-block;
-        width: calc(33% - 8px);
+        width: calc(25% - 8px);
         padding: 4px;
     }
 
     .work-content {
+        line-height: 150%;
+        
         a {
             color: $color2;
         }

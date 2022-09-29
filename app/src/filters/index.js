@@ -9,6 +9,8 @@ Vue.filter('formatFont', value => {
     stringArray.forEach((character, index) => {
         if (letters.indexOf(character.toLowerCase()) > -1)
             stringArray[index] = `<span class="yolda">${character}</span>`
+        else
+            stringArray[index] = `<span class="hel-out">${character}</span>`
     });
     return stringArray.join('')
 })

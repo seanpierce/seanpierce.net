@@ -2,7 +2,7 @@
 
     img#sean {
         position: fixed;
-        top: 4rem;
+        top: 10rem;
         right: 4rem;
         height: 24rem; 
         cursor: pointer;
@@ -15,45 +15,38 @@
         }
     }
 
-    #nav-modal {
-        background: yellow;
+    #nav-container {
         position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 2;
-        transform: translateY(-100%);
-        transition: all 0.25s;
+        top: 4rem;
+        right: 12rem;
+        height: 12rem; 
+        z-index: 10;
+        width: auto;
 
-        &.showNav {
-            transform: translateY(0);
+        img#speech {
+            height: 100%;
+            transform: rotate(270deg) scaleX(-1);
         }
-    }
 
-    ul {
-        list-style: none;
-        padding: 6em 0 0 0;
-        width: 90%;
-        margin: auto;
-        text-align: center;
+        img.nav-item {
+            height: 32px;
+            position: absolute;
+            cursor: pointer;
+        }
 
-        li {
-            display: inline-block;
-            width: 100%;
-            margin: 0.5rem auto;
-            font-size: 2rem;
-            text-align: center;
-            transform: skew(15deg);
+        img#nav-bio {
+            top: 2rem;
+            left: 3rem;
+        }
 
-            a {
-                color: black;
-                text-decoration: none;
+        img#nav-works {
+            top: 4.5rem;
+            left: 3rem;
+        }
 
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
+        img#nav-contact {
+            top: 7rem;
+            left: 3rem;
         }
     }
 }

@@ -1,6 +1,6 @@
 <template>
     <div id="works">
-        <ul>
+        <!-- <ul>
             <li v-for="work in works" 
                 :key="work.id">
                 <router-link
@@ -8,21 +8,19 @@
                     :to="'/works/' + work.slug">
                 </router-link>
             </li>
-        </ul>
+        </ul> -->
+        <div v-for="work in works" :key="work.id">
+            <Work :work="work"/>
+        </div>
     </div>
 </template>
 
 <script>
+import Work from '@/components/Work';
+
 export default {
-    methods: {
-        formatContent(input) {
-            let stringArray = input.split('')
-            stringArray.forEach((character, index) => {
-                if (character.toLowerCase() === 's' || character.toLowerCase() === 'p')
-                    stringArray[index] = `<span class="yolda">${character}</span>`
-            });
-            return stringArray.join('')
-        }
+    components: {
+        Work
     },
     computed: {
         works() {

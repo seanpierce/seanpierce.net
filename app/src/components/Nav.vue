@@ -1,38 +1,33 @@
 <template>
     <div id="nav">
         <img id="sean" :src="require('@/assets/images/big-sean.png')" @click="toggleNav()">
-        <div id="nav-modal" v-bind:class="{ showNav: showNav }">
-            <ul class="hel-out">
-                <li>
-                    <router-link @click="test()" to="/">Bio</router-link>
-                </li>
-                <li>
-                    <router-link to="/works">Works</router-link>
-                </li>
-                <li>
-                    <router-link to="/contact">Contact</router-link>
-                </li>
-            </ul>
+        <div id="nav-container">
+            <img id="speech" :src="require('@/assets/images/seanpierce-net-speech-bubble.png')">
+            <img id="nav-bio" 
+                class="nav-item" 
+                :src="require('@/assets/images/seanpierce-net-link-bio.png')"
+                @click="goTo('/')">
+            <img id="nav-works" 
+                class="nav-item" 
+                :src="require('@/assets/images/seanpierce-net-link-works.png')"
+                @click="goTo('/works')">
+            <img id="nav-contact" 
+                class="nav-item" 
+                :src="require('@/assets/images/seanpierce-net-link-contact.png')"
+                @click="goTo('contact')">
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            showNav: false
-        }
-    },
     methods: {
-        toggleNav() {
-            this.showNav = !this.showNav
+        goTo(path) {
+            if (this.$router.history.current.path === path)
+                return
+                
+            this.$router.push(path)
         }
     },
-    watch:{
-        $route() {
-            this.showNav = false;
-        }
-    } 
 }
 </script>

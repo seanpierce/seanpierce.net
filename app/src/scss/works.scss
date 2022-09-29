@@ -3,15 +3,31 @@
     border-bottom: solid 1px rgba($color2, 0.5);
     font-size: 1rem;
 
-    .work-title {
-        font-size: 2rem;
+    .work-title-wrapper {
         margin-bottom: 24px;
+
+        .work-title {
+            font-size: 2rem;
+        }
+
+        .work-year {
+            font-size: 14px;
+            font-style: italic;
+        }
     }
 
     .work-image {
         display: inline-block;
         width: calc(25% - 8px);
         padding: 4px;
+        cursor: pointer;
+
+        @media (max-width: $breakpoint) {
+            display: block;
+            width: 100%;
+            padding: 0;
+            margin: 12px 0;
+        }
     }
 
     .work-content {
@@ -19,6 +35,17 @@
         
         a {
             color: $color2;
+        }
+
+        img {
+            width: 50%;
+
+            @media (max-width: $breakpoint) {
+                display: block;
+                width: 100%;
+                padding: 0;
+                margin: 12px 0;
+            }
         }
     }
 }

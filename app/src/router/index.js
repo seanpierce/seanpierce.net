@@ -16,12 +16,6 @@ Vue.use(VueRouter)
     component: () => import('@/views/Works.vue')
   },
   {
-    path: '/works/:slug',
-    name: 'Work',
-    component: () => import('@/views/Work.vue'),
-    props: true
-  },
-  {
     path: '/contact',
     name: 'Contact',
     component: () => import('@/views/Contact.vue'),

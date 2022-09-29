@@ -1,9 +1,13 @@
 <template>
     <div class="work">
-        <div class="work-title" v-html="title"></div>
+        <div class="work-title-wrapper">
+            <div class="work-title" v-html="title"></div>
+            <span class="work-year">{{ work.year }}</span>
+        </div>
         <div v-if="images">
             <img v-for="(image, index) in images" 
                 class="work-image"
+                @click="open(mediaUrl + image)"
                 :key="index" 
                 :src="mediaUrl + image">
         </div>
@@ -20,11 +24,13 @@ export default {
             type: Object
         }
     },
+
     data() {
         return {
             test: true
         }
     },
+
     computed: {
         title() {
             return Vue.filter('formatFont')(this.work.title);
@@ -34,6 +40,12 @@ export default {
         },
         mediaUrl() {
             return process.env.VUE_APP_MEDIA_URL
+        }
+    },
+
+    methods: {
+        open(url) {
+            window.open(url, '_blank')
         }
     }
 }

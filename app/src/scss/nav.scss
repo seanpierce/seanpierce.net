@@ -8,10 +8,12 @@
         cursor: pointer;
         z-index: 10;
 
-        @media (max-width: 750px) {
+        @media (max-width: $breakpoint) {
+            position: absolute;
             height: 12rem; 
-            top: 1rem;
-            right: 1rem;
+            top: 5rem;
+            left: 10rem;
+            right: inherit;
         }
     }
 
@@ -22,6 +24,13 @@
         height: 12rem; 
         z-index: 10;
         width: auto;
+
+        @media (max-width: $breakpoint) {
+            position: absolute;
+            top: 2rem;
+            left: inherit;
+            right: inherit;
+        }
 
         img#speech {
             height: 100%;

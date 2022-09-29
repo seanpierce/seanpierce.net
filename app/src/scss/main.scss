@@ -23,7 +23,7 @@ body, html {
     box-sizing: border-box;
 
     @media (max-width: $breakpoint) {
-        margin: 0;
+        margin: 300px 0 100px 0;
         padding: 12px;
     }
 }

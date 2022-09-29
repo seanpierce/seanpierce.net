@@ -1,3 +1,4 @@
+from email.policy import default
 from statistics import mode
 from django.db import models
 
@@ -9,8 +10,8 @@ class Work(models.Model):
     title = models.CharField(max_length=250)
     slug = models.CharField(max_length=250, blank=True)
     content = RichTextField()
-    year = models.IntegerField()
-    present = models.BooleanField()
+    year = models.IntegerField(default="")
+    present = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
